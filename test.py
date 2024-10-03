@@ -12,7 +12,7 @@ from skimage import img_as_ubyte
 
 parser = argparse.ArgumentParser(description='Image Deraining using MPRNet')
 
-parser.add_argument('--input_dir', default='./Datasets/test/', type=str, help='Directory of validation images')
+parser.add_argument('--input_dir', default='./Datasets/test', type=str, help='Directory of validation images')
 parser.add_argument('--result_dir', default='./results/', type=str, help='Directory for results')
 parser.add_argument('--weights', default='./checkpoints/checkpoints_mfd.pth', type=str,  # './tip_rebuttal_checkpoints/MFD_loss4_latest420.pth'
                     help='Path to weights')
@@ -32,7 +32,7 @@ print("===>Testing using weights: ", args.weights)
 # model_restoration.to(device)
 model_restoration.eval().cuda()
 
-datasets = ['Test100']
+datasets = ['Rain100L']
 
 for dataset in datasets:
     rgb_dir_test = os.path.join(args.input_dir, dataset, 'input')
