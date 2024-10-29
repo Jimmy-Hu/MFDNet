@@ -5,6 +5,7 @@ import time
 import cv2
 import ffmpeg
 import numpy as np
+import torch
 
 def process_video_frame_by_frame(input_file, output_file, model_restoration):
     """
