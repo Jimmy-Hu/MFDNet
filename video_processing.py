@@ -8,6 +8,8 @@ import numpy as np
 import torch
 from skimage import img_as_ubyte
 from torch.utils.data import DataLoader
+from tqdm import tqdm
+
 
 def process_video_frame_by_frame(input_file, output_file, model_restoration):
     """
