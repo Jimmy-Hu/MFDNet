@@ -11,6 +11,7 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 import utils
+from data_RGB import get_test_data
 
 def process_video_frame_by_frame(input_file, output_file, model_restoration):
     """
