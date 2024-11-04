@@ -12,6 +12,8 @@ from tqdm import tqdm
 
 import utils
 from data_RGB import get_test_data
+from MFDNet import HPCNet as mfdnet
+
 
 def process_video_frame_by_frame(input_file, output_file, model_restoration):
     """
