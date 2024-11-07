@@ -302,9 +302,8 @@ class MODEL(nn.Module):
         [B_down_2, R_down_2] = self.down0_2(B_fea, R_fea)  # B 4C H/4 W/4
         [out_B_2, out_R_2] = self.crb_2([B_down_2, R_down_2])
         [B_up2_0, R_up2_0] = self.up2_0(out_B_2, out_R_2)  # B C H W
-
-        B_cat = torch.cat([out_B_0, B_up1_0, B_up2_0], 1)  # C + C + C
-        R_cat = torch.cat([out_R_0, R_up1_0, R_up2_0], 1)
+        B_cat = torch.cat([out_B_0, nnf.interpolate(B_up1_0, size=(out_B_0.size()[2], out_B_0.size()[3]), mode='bicubic', align_corners=False), nnf.interpolate(B_up2_0, size=(out_B_0.size()[2], out_B_0.size()[3]), mode='bicubic', align_corners=False)], 1)  # C + C + C
+        R_cat = torch.cat([out_R_0, nnf.interpolate(R_up1_0, size=(out_R_0.size()[2], out_R_0.size()[3]), mode='bicubic', align_corners=False), nnf.interpolate(R_up2_0, size=(out_R_0.size()[2], out_R_0.size()[3]), mode='bicubic', align_corners=False)], 1)
 
         B_fuse = self.point_conv_B(B_cat)  # 调整通道数 C H W
         R_fuse = self.point_conv_B(R_cat)
