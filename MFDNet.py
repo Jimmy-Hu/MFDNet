@@ -5,6 +5,7 @@ the final implement of Multi-Scale Fusion and Decomposition Network for Single I
 import torch
 import torch.nn as nn
 from restormer_block import RestormerBlock
+import torch.nn.functional as nnf
 
 
 def conv(in_channels, out_channels, kernel_size, bias=False, stride=1):  # 不改变size的conv
@@ -255,10 +256,11 @@ class HRM(nn.Module):
         xR = x[1]
         res_down_R = self.act1(self.down_R(xR))
         res_R = self.body(res_down_R)
-        xR_res = self.CAB_r(xR) + self.lfsfb(res_down_R, res_R)
+        xR_res = self.CAB_r(xR) + nnf.interpolate(self.lfsfb(res_down_R, res_R), size=(self.CAB_r(xR).size()[2], self.CAB_r(xR).size()[3]), mode='bicubic', align_corners=False)
 
         xB_res = self.CAB_b(xB)
-
+        del res_R
+        del res_down_R
         x = self.CRB(xB_res, xR_res)
 
         return x
