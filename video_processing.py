@@ -21,3 +21,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
     and re-encodes to a new video.
 
     Args:
+        input_file: Path to the input video file.
