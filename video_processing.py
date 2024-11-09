@@ -23,3 +23,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
     Args:
         input_file: Path to the input video file.
         output_file: Path to the output video file.
+    """
