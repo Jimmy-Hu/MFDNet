@@ -25,3 +25,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
         output_file: Path to the output video file.
     """
     try:
+        # Probe for video information
