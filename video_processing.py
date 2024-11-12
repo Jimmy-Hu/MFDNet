@@ -26,3 +26,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
     """
     try:
         # Probe for video information
+        probe = ffmpeg.probe(input_file)
