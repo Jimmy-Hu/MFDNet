@@ -27,3 +27,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
     try:
         # Probe for video information
         probe = ffmpeg.probe(input_file)
+        video_stream = next((stream for stream in probe['streams'] if stream['codec_type'] == 'video'), None)
