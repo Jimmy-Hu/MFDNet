@@ -35,3 +35,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
         process1 = (
             ffmpeg
             .input(input_file)
+            .output('pipe:', format='rawvideo', pix_fmt='rgb24')
