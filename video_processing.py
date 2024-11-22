@@ -37,3 +37,5 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
             .input(input_file)
             .output('pipe:', format='rawvideo', pix_fmt='rgb24')
             .run_async(pipe_stdout=True)
+        )
+
