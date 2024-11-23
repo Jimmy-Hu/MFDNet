@@ -39,3 +39,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
             .run_async(pipe_stdout=True)
         )
 
+        # Output
