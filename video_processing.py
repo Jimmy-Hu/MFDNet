@@ -44,3 +44,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
             ffmpeg
             .input('pipe:', format='rawvideo', pix_fmt='rgb24', s='{}x{}'.format(width, height))
             .output(output_file, vcodec='libx264', pix_fmt='yuv420p')
+            .overwrite_output()
