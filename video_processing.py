@@ -50,3 +50,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
 
         # Process frame (deraining processing)
         while in_bytes := process1.stdout.read(width * height * 3):
+            with torch.no_grad(): 
