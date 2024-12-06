@@ -52,3 +52,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
         while in_bytes := process1.stdout.read(width * height * 3):
             with torch.no_grad(): 
                 in_frame = torch.frombuffer(in_bytes, dtype=torch.uint8).float().reshape((1, 3, width, height))
+                in_frame_gpu = torch.div(in_frame, 255).to(device='cuda')
