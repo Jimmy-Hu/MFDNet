@@ -55,3 +55,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
                 in_frame_gpu = torch.div(in_frame, 255).to(device='cuda')
                     
                 restored = model_restoration(in_frame_gpu)
+                restored = torch.clamp(restored[1], 0, 1)
