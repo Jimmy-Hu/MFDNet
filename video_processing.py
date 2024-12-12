@@ -58,3 +58,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
                 restored = torch.clamp(restored[1], 0, 1)
                     
                 out_frame = (restored.cpu() * 255).byte().numpy()
+            
