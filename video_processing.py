@@ -59,3 +59,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
                     
                 out_frame = (restored.cpu() * 255).byte().numpy()
             
+                # Clear cache and del intermediate vars
