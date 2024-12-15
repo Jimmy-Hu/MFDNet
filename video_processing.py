@@ -61,3 +61,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
             
                 # Clear cache and del intermediate vars
                 torch.cuda.empty_cache()
+                del in_frame_gpu
