@@ -67,3 +67,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
                 process2.stdin.write(out_frame.tobytes())
 
         # Close streams
+        process1.stdout.close()
