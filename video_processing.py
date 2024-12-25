@@ -71,3 +71,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
         process2.stdin.close()
         process1.wait()
         process2.wait()
+
