@@ -73,3 +73,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
         process2.wait()
 
     except ffmpeg.Error as e:
+        print('stdout:', e.stdout.decode('utf8'))
