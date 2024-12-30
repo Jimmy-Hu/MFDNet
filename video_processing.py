@@ -76,3 +76,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
         print('stdout:', e.stdout.decode('utf8'))
         print('stderr:', e.stderr.decode('utf8'))
 
+if __name__ == '__main__':
