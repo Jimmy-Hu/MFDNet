@@ -77,3 +77,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
         print('stderr:', e.stderr.decode('utf8'))
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Image Deraining using MPRNet')
