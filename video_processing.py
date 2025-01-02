@@ -79,3 +79,4 @@ def process_video_frame_by_frame(input_file, output_file, model_restoration):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Image Deraining using MPRNet')
 
+    parser.add_argument('--weights', default='./checkpoints/checkpoints_mfd.pth', type=str,
