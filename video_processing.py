@@ -80,3 +80,4 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Image Deraining using MPRNet')
 
     parser.add_argument('--weights', default='./checkpoints/checkpoints_mfd.pth', type=str,
+                        help='Path to weights')
