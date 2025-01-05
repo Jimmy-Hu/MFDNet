@@ -82,3 +82,4 @@ if __name__ == '__main__':
     parser.add_argument('--weights', default='./checkpoints/checkpoints_mfd.pth', type=str,
                         help='Path to weights')
     parser.add_argument('--gpus', default='0', type=str, help='CUDA_VISIBLE_DEVICES')
+
