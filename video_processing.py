@@ -92,3 +92,4 @@ if __name__ == '__main__':
 
     model_restoration = mfdnet()
     utils.load_checkpoint(model_restoration, args.weights)
+    print("===>Testing using weights: ", args.weights)
