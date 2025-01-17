@@ -94,3 +94,4 @@ if __name__ == '__main__':
     utils.load_checkpoint(model_restoration, args.weights)
     print("===>Testing using weights: ", args.weights)
 
+    model_restoration.eval().cuda()
