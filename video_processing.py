@@ -86,7 +86,7 @@ if __name__ == '__main__':
     parser.add_argument('--gpus', default='0', type=str, help='CUDA_VISIBLE_DEVICES')
 
     args = parser.parse_args()
-
+    os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpus
 
