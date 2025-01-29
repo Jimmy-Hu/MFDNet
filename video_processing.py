@@ -95,3 +95,4 @@ if __name__ == '__main__':
     print("===>Testing using weights: ", args.weights)
 
     model_restoration.eval().cuda()
+    
