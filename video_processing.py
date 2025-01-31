@@ -96,4 +96,5 @@ if __name__ == '__main__':
 
     model_restoration.eval().cuda()
     
+    end_time = time.time()
     print(end_time - start_time)
