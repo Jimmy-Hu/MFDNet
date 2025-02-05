@@ -96,7 +96,7 @@ if __name__ == '__main__':
 
     model_restoration.eval().cuda()
     
-    input_video
+    input_video = 
 
     process_video_frame_by_frame(input_video, output_video, model_restoration)
 
