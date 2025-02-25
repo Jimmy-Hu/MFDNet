@@ -97,7 +97,7 @@ if __name__ == '__main__':
     model_restoration.eval().cuda()
     
     input_video = ""
-    output_video = "Output_Video.mp"
+    output_video = "Output_Video.mp4"
 
     process_video_frame_by_frame(input_video, output_video, model_restoration)
 
